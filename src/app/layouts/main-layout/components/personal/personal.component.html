@@ -1,20 +1,22 @@
 
 <div class="container-info">
     
-    <form class="row g-3 needs-validation" novalidate>
+    <form class="row g-3 needs-validation" novalidate autocomplete="off" [formGroup]="myForm" (ngSubmit)="save()">
       <div class="col-md-4">
         <label for="validationCustom01" class="form-label">First name</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-        <div class="valid-feedback">
-          Looks good!
+        <input type="text" class="form-control" formControlName="name" >
+
+          <span *ngIf="invalidFild('name')"
+          class="form-text text-danger">Debe de ser de 3 letras</span>
         </div>
-      </div>
+
       <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="lastname">
+        
+        <span *ngIf="invalidFild('lastname')"
+        class="form-text text-danger">Debe de ser de 3 letras</span>
+
       </div>
       <div class="col-md-4">
         <label for="validationCustomUsername" class="form-label">Username</label>
@@ -26,17 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-          <label class="form-check-label" for="invalidCheck">
-            Agree to terms and conditions
-          </label>
-          <div class="invalid-feedback">
-            You must agree before submitting.
-          </div>
-        </div>
-      </div>
+
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
