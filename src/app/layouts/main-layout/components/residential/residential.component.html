@@ -1,24 +1,25 @@
 <div class="container-info">
     
-    <form class="row g-3 needs-validation" novalidate>
+    <form class="row g-3 needs-validation" novalidate autocomplete="off" [formGroup]="myForm" (ngSubmit)="save()">
 
       <div class="col-md-6">
         <label for="validationCustom03" class="form-label">Country</label>
-        <input type="text" class="form-control" id="validationCustom03" required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
+        <input type="text" class="form-control" formControlName="country">
+
+        <span *ngIf="invalidFild('country')"
+        class="form-text text-danger">Debe de ser de 2 letras</span>
+
       </div>
       <div class="col-md-3">
         <label for="validationCustom04" class="form-label">City</label>
-        <input type="text" class="form-control" id="validationCustom03" required>
+        <input type="text" class="form-control" formControlName="city" >
         <div class="invalid-feedback">
           Please provide a valid city.
         </div>
       </div>
       <div class="col-md-3">
         <label for="validationCustom05" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="validationCustom05" required>
+        <input type="text" class="form-control" formControlName="zip">
         <div class="invalid-feedback">
           Please provide a valid zip.
         </div>
