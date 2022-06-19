@@ -24,17 +24,33 @@
           Please provide a valid zip.
         </div>
       </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-          <label class="form-check-label" for="invalidCheck">
-            Agree to terms and conditions
-          </label>
-          <div class="invalid-feedback">
-            You must agree before submitting.
-          </div>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Neighborhood</label>
+            <input type="text" class="form-control" formControlName="neighborhood">
+    
+            <span *ngIf="invalidFild('neighborhood')"
+            class="form-text text-danger">Debe de ser de 2 letras</span>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Adress</label>
+            <input type="text" class="form-control" formControlName="adress">
+    
+            <span *ngIf="invalidFild('adress')"
+            class="form-text text-danger">Debe de ser de 5 letras</span>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Department</label>
+            <input type="text" class="form-control" formControlName="department">
+    
+            <span *ngIf="invalidFild('department')"
+            class="form-text text-danger">Debe de ser de 3 letras</span>
         </div>
       </div>
+
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>

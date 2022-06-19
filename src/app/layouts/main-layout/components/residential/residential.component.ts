@@ -11,7 +11,10 @@ export class ResidentialComponent implements OnInit {
   myForm: FormGroup = this.fb.group({
     country: ['', [Validators.required, Validators.minLength(2)]],
     city: ['', [Validators.required, Validators.minLength(2)]],
-    zip: ['', [Validators.required, Validators.minLength(4)]]
+    zip: ['', [Validators.required, Validators.minLength(4)]],
+    neighborhood: ['', [Validators.required]],
+    adress: ['', [Validators.required]],
+    department: ['', [Validators.required]]
   })
 
   constructor(private fb: FormBuilder) { }

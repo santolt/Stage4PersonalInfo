@@ -11,7 +11,9 @@ export class PersonalComponent implements OnInit {
   myForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     lastname: ['', [Validators.required, Validators.minLength(3)]],
-    username: ['', [Validators.required]]
+    username: ['', [Validators.required]],
+    phone: ['', [Validators.required, Validators.minLength(7)]],
+    age: ['', [Validators.required, Validators.minLength(1)]]
   })
 
 
@@ -21,7 +23,9 @@ export class PersonalComponent implements OnInit {
     this.myForm.reset({
       name: 'My name',
       lastname: 'lastname',
-      username: '@username'
+      username: '@username',
+      phone: 'xxx-xxxxx',
+      age: '0'
     })
   }
 
